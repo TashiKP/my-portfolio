@@ -87,34 +87,34 @@ export default function Journey() {
     <section
       ref={sectionRef}
       id="journey"
-      className="relative min-h-screen bg-gradient-to-br from-slate-900/90 to-slate-800/90 text-white px-8 py-24"
+      className="relative min-h-screen bg-gradient-to-br from-slate-900/90 to-slate-800/90 text-white px-4 sm:px-8 py-16 sm:py-24"
     >
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-25 blur-xl animate-pulse" />
-        <div className="absolute bottom-32 right-16 w-80 h-80 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-30 blur-xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-25 blur-xl animate-pulse" />
+        <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-96 h-48 sm:h-96 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-25 blur-xl animate-pulse" />
+        <div className="absolute bottom-16 sm:bottom-32 right-8 sm:right-16 w-40 sm:w-80 h-40 sm:h-80 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-30 blur-xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 w-32 sm:w-64 h-32 sm:h-64 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-full opacity-25 blur-xl animate-pulse" />
       </div>
 
       {/* Main container */}
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-block p-1 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 mb-8">
-            <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-2xl px-8 py-4 rounded-xl border border-white/10">
-              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-20">
+          <div className="inline-block p-1 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 mb-6 sm:mb-8">
+            <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-2xl px-4 sm:px-8 py-3 sm:py-4 rounded-xl border border-white/10">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
                 My Journey
               </h2>
             </div>
           </div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             A timeline of my passions, skills, and the technologies that excite
             me
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
+        {/* Timeline - Desktop */}
+        <div className="relative hidden md:block">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-500/30 via-pink-500/30 to-cyan-500/30 rounded-full" />
 
           <motion.div
@@ -166,16 +166,54 @@ export default function Journey() {
           </motion.div>
         </div>
 
+        {/* Simple Cards Layout - Mobile/Tablet */}
+        <motion.div
+          className="md:hidden space-y-6 sm:space-y-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={animated ? "show" : "hidden"}
+        >
+          {paragraphs.map((item, index) => (
+            <motion.div
+              key={index}
+              className="relative"
+              variants={cardVariants}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-2xl opacity-40 blur-xl" />
+
+              <div className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-white/20 transition-all duration-500 group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10 flex-shrink-0">
+                    <span className="text-sm font-medium text-white/70">
+                      {item.step}
+                    </span>
+                  </div>
+                  <div className="h-px flex-1 bg-gradient-to-r from-purple-500/30 to-transparent" />
+                  <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent flex-shrink-0">
+                    {item.label}
+                  </span>
+                </div>
+                <p
+                  className="text-base sm:text-lg text-slate-200 leading-relaxed group-hover:text-white transition-colors duration-300"
+                  dangerouslySetInnerHTML={{
+                    __html: highlightText(item.text),
+                  }}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
         {/* Bottom accent */}
-        <div className="mt-20 text-center">
+        <div className="mt-12 sm:mt-20 text-center">
           <button
             onClick={() => {
               const el = document.getElementById("projects");
               el?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-block px-8 py-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10 backdrop-blur-md hover:bg-purple-500/30 transition-all duration-300"
+            className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10 backdrop-blur-md hover:bg-purple-500/30 transition-all duration-300"
           >
-            <span className="text-slate-300 font-medium group-hover:text-white transition-colors">
+            <span className="text-slate-300 font-medium hover:text-white transition-colors text-sm sm:text-base">
               And the journey continues...
             </span>
           </button>
