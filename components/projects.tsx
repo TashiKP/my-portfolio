@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const projectsData = [
   {
@@ -8,7 +8,7 @@ const projectsData = [
       "YOLOv5-based model trained on 665 labeled images to detect potholes in road images. Trained for 100 epochs with a batch size of 8 using a single class annotation.",
     tech: ["YOLOv5", "Python", "RStudio"],
     category: "AI/ML",
-    link: "https://github.com/TashiKP/YoloV5-PotHole-Detection.git"
+    link: "https://github.com/TashiKP/YoloV5-PotHole-Detection.git",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projectsData = [
       "A smart communication app for speech-impaired individuals in Bhutan. Features text-to-speech, symbol-based communication, and supports Dzongkha and English.",
     tech: ["React Native", "MongoDB", "Flask", "NLP"],
     category: "Full Stack",
-    link: "https://github.com/TashiKP/Communify.git"
+    link: "https://github.com/TashiKP/Communify.git",
   },
   {
     id: 3,
@@ -26,8 +26,8 @@ const projectsData = [
       "Web-based system for managing ACM chapter activities including member registration, event tracking, and reporting. Built as a collaborative team project.",
     tech: ["Next.js", "MongoDB", "GitHub", "Figma"],
     category: "Full Stack",
-    link: "https://github.com/suzWaks/RUB-ACM-MIS.git"
-  }
+    link: "https://github.com/suzWaks/RUB-ACM-MIS.git",
+  },
 ];
 
 export default function Projects() {
@@ -81,7 +81,8 @@ export default function Projects() {
             </div>
           </div>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            A showcase of my creative work spanning web development, AI, design, and more
+            A showcase of my creative work spanning web development, AI, design,
+            and more
           </p>
         </div>
 
@@ -91,30 +92,41 @@ export default function Projects() {
             <div
               key={project.id}
               className={`transition-all duration-1000 ease-out ${
-                animated ? 'opacity-100' : 'opacity-0'
+                animated ? "opacity-100" : "opacity-0"
               } ${
-                isStacked 
+                isStacked
                   ? `absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl`
                   : `relative`
               }`}
               style={{
                 transitionDelay: `${index * 150}ms`,
                 zIndex: isStacked ? 10 - index : 1,
-                transform: isStacked 
-                  ? `translateX(-50%) translateY(${index * 8}px) rotate(${(index - 2) * 1}deg)`
-                  : 'none'
+                transform: isStacked
+                  ? `translateX(-50%) translateY(${index * 8}px) rotate(${
+                      (index - 2) * 1
+                    }deg)`
+                  : "none",
               }}
             >
-              <div className={`group relative transition-all duration-1000 ${!isStacked ? 'mb-8' : 'mb-0'}`}>
+              <div
+                className={`group relative transition-all duration-1000 ${
+                  !isStacked ? "mb-8" : "mb-0"
+                }`}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-2xl opacity-60 blur-xl group-hover:opacity-80 transition-opacity duration-500" />
                 <div className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500">
                   <div className="flex items-center justify-between mb-6">
                     <div className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10">
-                      <span className="text-sm font-medium text-white/80">{project.category}</span>
+                      <span className="text-sm font-medium text-white/80">
+                        {project.category}
+                      </span>
                     </div>
                     <div className="flex gap-2">
                       {project.tech.slice(0, 3).map((tech, i) => (
-                        <div key={i} className="px-3 py-1 bg-white/10 rounded-lg text-xs text-white/70">
+                        <div
+                          key={i}
+                          className="px-3 py-1 bg-white/10 rounded-lg text-xs text-white/70"
+                        >
                           {tech}
                         </div>
                       ))}
@@ -146,9 +158,18 @@ export default function Projects() {
 
         {/* GitHub + Arrow */}
         <div className="mt-20 flex flex-col items-center justify-center space-y-8">
-          <div className="px-8 py-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10 backdrop-blur-md">
-            <span className="text-slate-300 font-medium">View all projects on GitHub →</span>
-          </div>
+          <a
+            href="https://github.com/TashiKP/TashiKP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-20 flex flex-col items-center justify-center space-y-8"
+          >
+            <div className="px-8 py-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full border border-white/10 backdrop-blur-md cursor-pointer hover:brightness-110 transition">
+              <span className="text-slate-300 font-medium">
+                View all projects on GitHub →
+              </span>
+            </div>
+          </a>
 
           <button
             onClick={() => {
@@ -168,7 +189,11 @@ export default function Projects() {
               stroke="currentColor"
               strokeWidth={2}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
         </div>
