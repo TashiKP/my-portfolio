@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,5 +14,17 @@ export default {
       },
     },
   },
+  safelist: [
+    "text-purple-300",
+    "text-cyan-300",
+    "text-pink-300",
+    "font-semibold",
+    "hover:text-white",
+    "transition-colors",
+    "duration-300",
+    "cursor-pointer"
+  ],
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
