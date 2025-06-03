@@ -9,16 +9,20 @@ type GalleryItem = {
 
 const galleryData: GalleryItem[] = [
   { id: 1, src: "/1.jpg", caption: "MARVELous" },
-  { id: 2, src: "/2.jpg", caption: "Not AI Generated! :(" },
+  { id: 2, src: "/2.jpg", caption: "Not AI Generated!" },
   { id: 3, src: "/3.jpg", caption: "Rick in Bhutan?" },
   { id: 4, src: "/4.jpg", caption: "What if?" },
   { id: 5, src: "/5.jpg", caption: "Something Normal" },
-  { id: 6, src: "/6.jpg", caption: "Not My Best Work XD" },
+  { id: 6, src: "/6.jpg", caption: "Not My Best Work" },
   { id: 7, src: "/7.jpg", caption: "Portal to Nowhere" },
   { id: 8, src: "/8.jpg", caption: "Peaceful" },
   { id: 9, src: "/9.jpg", caption: "Imagination Running Wild" },
   { id: 10, src: "/10.jpg", caption: "Photo Blending " },
-  { id: 11, src: "/11.jpg", caption: "Takin" }
+  { id: 11, src: "/11.jpg", caption: "Takin" },
+  { id: 12, src: "/12.jpg", caption: "Aesthetic" },
+  { id: 13, src: "/13.jpg", caption: "August" },
+  { id: 14, src: "/14.jpg", caption: "Wallpaper" },
+
 ];
 
 export default function Photoshop() {
