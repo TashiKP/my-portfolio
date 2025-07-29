@@ -60,7 +60,7 @@ export default function Home() {
     // Initialize audio element
     audioRef.current = new Audio('/pinch.mp3'); // Replace with your music file path
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3; // Set volume to 30%
+    audioRef.current.volume = 0.3; 
 
     const audio = audioRef.current;
 
@@ -203,7 +203,7 @@ export default function Home() {
               {/* Music Info - Shows on hover */}
               <div className="absolute left-full top-1/2 transform -translate-y-1/2 ml-3 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
                 <div className="bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-xl border border-white/20 rounded-lg px-3 py-1.5 shadow-lg">
-                  <p className="text-xs text-white/80 whitespace-nowrap">🎵 Clipse - So Be It</p>
+                  <p className="text-xs text-white/80 whitespace-nowrap">🎵 Ai Generated but lyrics are mine lol! </p>
                 </div>
               </div>
             </div>
