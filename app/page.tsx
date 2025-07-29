@@ -58,7 +58,7 @@ export default function Home() {
 
   useEffect(() => {
     // Initialize audio element
-    audioRef.current = new Audio('/Clipse - So Be It.mp3'); // Replace with your music file path
+    audioRef.current = new Audio('/pinch.mp3'); // Replace with your music file path
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3; // Set volume to 30%
 
