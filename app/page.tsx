@@ -275,7 +275,7 @@ export default function Home() {
               <div className="relative z-10 mb-6 sm:mb-8">
                 <div className="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
                   <p className="text-slate-200 text-sm sm:text-base italic leading-relaxed">
-                    &quot;Code is like humor. When you have to explain it, it is bad ;)&quot;
+                    &quot;UX/UI Designer by profession, also enjoy the music (located at the left corner) ;)&quot;
                   </p>
                 </div>
               </div>
