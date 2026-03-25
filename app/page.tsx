@@ -267,7 +267,7 @@ export default function Home() {
                 </h1>
                 <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-3 sm:mb-4 rounded-full"></div>
                 <p className="text-slate-300 text-base sm:text-lg font-light">
-                  Full Stack Developer
+                  Developer
                 </p>
               </div>
 
